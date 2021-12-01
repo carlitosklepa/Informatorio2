@@ -4,7 +4,7 @@
 
 -Add, se especifican los cambios que más adelante queremos commitear (se puede especificar los archivos o se usa el . para incluir todos): git add . -->para commitear todos los cambios hechos
 
--Commitear, cada vez que hacemos algun cambio (modificar un archivo o crear un archivo nuevo) y queremos actualizar el cambio en el repo:
+-Commitear, cada vez que hacemos algun cambio (modificar un archivo o crear un archivo nuevo) y queremos actualizar el cambio en el repo: git commit -m "Algún comentario que quiera hacer"
 
 -Para subir estos cambios y que se reflejen en el repo: git push
 
