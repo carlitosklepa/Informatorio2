@@ -21,3 +21,9 @@ Ejecutar el proyecto:
 Crear un archivo de requerimientos:
 -dentro del entorno virtual y de la carpeta del pryecto: pip freeze > requirements.txt
 -con este archivo, dentro de un nuevo entorno virtual puedo instalar esos requerimientos escribiendo: pip install -r requirements.txt
+
+-Crear una aplicación "productos" (u otro nombre que se quiera): en el cmd del proyecto: django-admin startapp productos
+
+-Hacer migraciones, primero python3 manage.py check, luego: python3 manage.py makemigrations
+
+-Para que las migraciones se reflejen en la BD: python3 manage.py migrate
