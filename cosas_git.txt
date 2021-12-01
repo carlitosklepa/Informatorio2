@@ -1,0 +1,11 @@
+-Crear el repo
+
+-Clonarlo: en el cmd de la carpeta donde están los proyectos: git clone enlace del repo
+
+-Add, se especifican los cambios que más adelante queremos commitear (se puede especificar los archivos o se usa el . para incluir todos): git add . -->para commitear todos los cambios hechos
+
+-Commitear, cada vez que hacemos algun cambio (modificar un archivo o crear un archivo nuevo) y queremos actualizar el cambio en el repo:
+
+-Para subir estos cambios y que se reflejen en el repo: git push
+
+-Para bajar actualizaciones que se hicieron en el repo: git pull

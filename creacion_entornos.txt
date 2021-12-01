@@ -1,0 +1,23 @@
+Crear el entorno:
+-Posicionar el cmd en la carpeta donde se va a Crear
+-escribir en cmd: virtualenv nombre_entorno
+-entrar con cmd a la carpeta del entorno y a la carpeta de bin (scripts)
+-dentro de la carpeta bin, escribir: source activate, con esto ingreso al entorno virtual
+-para salir del entorno: deactivate
+
+Instalar Django:
+-dentro del entorno virtual: pip install django
+-para chequear: pip freeze, te muestra las librerias instaladas en ese entorno
+
+Crear un proyecto:
+-dentro del entorno virtual y dentro de la carpeta donde se quiera crear el proyecto: django-admin startproject nombre_proyecto
+-configurar carpetas y archivos
+
+Ejecutar el proyecto:
+-dentro de la carpeta del proyecto, en el cmd: python3 manage.py runserver
+-pueden aparecer algunos errores para corregir y después ingresa al server
+-
+
+Crear un archivo de requerimientos:
+-dentro del entorno virtual y de la carpeta del pryecto: pip freeze > requirements.txt
+-con este archivo, dentro de un nuevo entorno virtual puedo instalar esos requerimientos escribiendo: pip install -r requirements.txt
