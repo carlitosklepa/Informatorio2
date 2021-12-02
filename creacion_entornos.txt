@@ -27,3 +27,5 @@ Crear un archivo de requerimientos:
 -Hacer migraciones, primero python3 manage.py check, luego: python3 manage.py makemigrations
 
 -Para que las migraciones se reflejen en la BD: python3 manage.py migrate
+
+-Para crear super usuarios (en el cmd del proyecto): python3 manage.py createsuperuser
