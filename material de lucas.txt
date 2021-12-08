@@ -1,0 +1,36 @@
+Hola a todos!
+Les dejo una pequeña guia de temas para que vayan avanzando con la lectura de materia:
+Herencia de templates
+https://uniwebsidad.com/libros/django-1-0/capitulo-4/herencia-de-plantillas
+Archivos Medias en Django
+https://programmerclick.com/article/6584879228/
+Forms and ModelForm
+Vistas basadas en clases
+https://docs.hektorprofe.net/django/web-playground/cbv-templateview/
+https://www.agiliq.com/blog/2017/12/when-and-how-use-django-templateview/
+FormView
+https://www.agiliq.com/blog/2019/01/django-formview/
+Crud
+https://www.agiliq.com/blog/2017/12/when-and-how-use-django-listview/
+https://www.agiliq.com/blog/2019/01/django-when-and-how-use-detailview/
+https://www.agiliq.com/blog/2019/01/django-createview/
+https://www.geeksforgeeks.org/deleteview-class-based-views-django/
+Mixins y decoradores, otros tipos de relaciones foraneas (OneToOne, ManyToMany, ForeignKey)
+programmerclick.comprogrammerclick.com
+Configuración de Django media MEDIA_URL MEDIA_ROOT - programador clic
+Configuración de Django media MEDIA_URL MEDIA_ROOT, programador clic, el mejor sitio para compartir artículos técnicos de un programador.
+docs.hektorprofe.netdocs.hektorprofe.net
+Class Based Views y TemplateView | Curso de Django | Hektor Profe
+Web de apuntes de programación de Hector Costa Guzman.
+
+
+Lucas Ibañez  hace < 1 minuto
+https://docs.djangoproject.com/en/3.2/ref/class-based-views/generic-editing/
+
+Recordatorio:
+Crear migraciones
+python manage.py makemigrations
+Aplicar migraciones
+python manage migrate
+Crear superuser
+python manage.py createsuperuser
