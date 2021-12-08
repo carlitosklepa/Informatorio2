@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from productos.models import Producto
+from app.productos.models import Producto
 
 def inicio(request):
     context = {
