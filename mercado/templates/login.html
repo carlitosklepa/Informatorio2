@@ -52,23 +52,7 @@
       <h1 class="h3 mb-3 fw-normal">Iniciar sesión</h1>
       <p>Página de práctica Mercado</p>
 
-      {% if form.errors %}
-        {% for field in form %}
-          {% for error in field.errors %}
-              <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                <strong>{{field.label}}</strong> {{error}}
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-              </div>
-          {% endfor %}
-        {% endfor %}
-
-        {% for error in form.non_field_errors %}
-          <div class="alert alert-warning alert-dismissible fade show" role="alert">
-            {{error}}
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-          </div>
-        {% endfor %}
-      {% endif %}
+      {% include "includes/form_errors.html" %}
 
       <div class="form-floating">
         <input type="text" class="form-control" id="inputUsername" placeholder="Nombre de Usuario" autofocus="" name="username">
