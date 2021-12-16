@@ -1,19 +1,48 @@
 {% extends "base/base.html" %}
 
+<!-- {% load static %} SOLO SI ES NECESARIO -->
+
 {% block contenido %}
   <h1>Ofertas del día</h1>
+    <form class="form-inline my-2 my-lg-0" style="padding:50px;">
+      <div class="row">
+        <div class="col-md-10">
+          <input class="form-control mr-sm-2" type="search" placeholder="Ingrese nombre del producto..." aria-label="Search">
+        </div>
+        <div class="col-md-2">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+        </div>
+      </div>
+    </form>
+
+
   <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
     {% for p in productos %}
       <div class="col">
         <div class="card shadow-sm">
-          <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-
+          {% if p.imagen %}
+            <img src="{{p.imagen.url}}" alt="" class="bd-placeholder-img card-img-top" width="100%" height="225">
+          {% else %}
+          <!--poner una imagen personalizada:
+          <img src="{% static 'images/default/nombre_de_la_imagen.jpg' %}" alt="" class="bd-placeholder-img card-img-top" width="100%" height="225">
+        -->
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em"></text></svg>
+          {% endif %}
           <div class="card-body">
-            <p class="card-text">{{p.nombre}}</p>
+            <p class="card-text">
+              {{p.nombre}}
+              {% for c in p.categorias.all %}
+              <span class="badge rounded-pill bg-primary">{{c.nombre}}</span>
+              {% endfor %}
+
+            </p>
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn-group">
                 <!--<button type="button" class="btn btn-sm btn-outline-secondary">View</button>-->
-                <a class="btn btn-sm btn-outline-secondary" href="{% url 'productos:detalle' %}">Ver más</a>
+                <a class="btn btn-sm btn-outline-secondary" href="{% url 'productos:detalle' p.id %}">Ver más</a>
+
+                {% include "productos/includes/show_estado.html" %}
+                
               </div>
               <!--<small class="text-muted">9 mins</small>-->
             </div>

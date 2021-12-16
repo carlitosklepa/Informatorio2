@@ -40,8 +40,10 @@
 
       <main>
         {% include "base/portada.html" %}
+
         <div class="album py-5 bg-light">
           <div class="container">
+            {% block menu %}
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
               <div class="container-fluid">
                 <a class="navbar-brand" href="#">MENU</a>
@@ -56,18 +58,28 @@
                     <li class="nav-item">
                       <a class="nav-link" href="#">Catálogo</a>
                     </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="{% url 'productos:admin_listar' %}">Productos</a>
+                    {% if user.is_authenticated %}
+                      
+                      {% if user.es_administrador %}
+                        <li class="nav-item">
+                          <a class="nav-link" href="{% url 'productos:admin_listar' %}">Productos</a>
+                        <li class="nav-item">
+                          <a class="nav-link" href="{% url 'productos:mis_productos' %}">Mis Productos</a>
+                      {% endif %}
+                    {% endif %}
+
                     </li>
                   </ul>
                 </div>
               </div>
             </nav>
+              {% endblock menu %}
             {% block contenido %}
               <h1>En el padre, sin redefinir el block</h1>
             {% endblock contenido %}
           </div>
         </div>
+
       </main>
 
 {% include "base/footer.html" %}

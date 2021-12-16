@@ -1,0 +1,31 @@
+{% extends "base/base.html" %}
+
+{% block contenido %}
+
+<h1>Ingrese sus datos:</h1>
+
+<form method="POST">{% csrf_token %}
+  {% include "includes/form_errors.html" %}
+
+  {% include "includes/forms.html" %}
+
+<!--
+RENDERIZAR TODOS LOS CAMPOS JUNTOS:
+{{form.as_p}}
+
+RENDERIZAR LOS CAMPOS INDIVIDUALMENTE:
+  {{form.username.label}}
+  {{form.username}}
+-->
+  <div class="row">
+    <div class="col">
+      <button type="submit" class="btn btn-success">Registrarme</button>
+      <a href="{% url 'inicio'%}" class="btn btn-danger">Cancelar</a>
+    </div>
+
+  </div>
+</form>
+
+{% endblock contenido %}
+{% block menu %}
+{% endblock menu %}

@@ -24,16 +24,27 @@ AUTH_USER_MODEL = "usuarios.Usuario"
 
 # Application definition
 
-INSTALLED_APPS = [
+DJANGO_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'app.productos',
-    'app.usuarios'
+
 ]
+
+LOCAL_APPS = [
+    'app.productos',
+    'app.usuarios',
+    'app.favoritos'
+]
+
+TERCERO_APPS = [
+
+]
+
+INSTALLED_APPS = DJANGO_APPS + LOCAL_APPS + TERCERO_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -91,9 +102,9 @@ AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
     },
-    {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-    },
+    #{
+    #    'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+    #},
     {
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
@@ -123,9 +134,7 @@ STATICFILES_DIRS = (
     )
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = (
-    os.path.join(os.path.dirname(BASE_DIR), 'media'),
-    )
+MEDIA_ROOT = 'media'
 '''
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'statics'), #ESTA ES LA FORMA DE LUCAS
